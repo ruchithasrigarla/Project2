@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html >
+<head>
+ <title>Calculator</title>
+ <style>
+    *{
+        padding: 0px;
+        margin: 0px;
+    }
+    body{
+        background-image: url(./leaves.avif);
+        background-repeat:no-repeat;
+        background-size:100% 1500px ;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #container{
+        position: relative;
+        width: 30%;
+        height: 60%;
+        background-color: rgba(0, 0, 0, 0.018);
+        border-radius: 2%;
+        box-shadow: 5px 5px 5px black;
+    }
+    #disply{
+        width: 75%;
+        height: 30px;
+        position: absolute;
+        top: 5%;
+        left: 9%;
+        background-color: black;
+        color: whitesmoke;
+        font-size: 25px;
+        padding: 5px;
+        outline: none;
+        border: groove 10px rgba(128, 128, 128, 0.471) ;
+        box-shadow: 2px 2px 5px black;
+    }
+    .a{
+        width: 15%;
+        height: 6vh;
+        position: relative;
+        top: 15vh;
+        left: 5vw;
+        margin-top: 20px;
+        margin: 5px;
+        background-color: black;
+        color: white;
+        font-size: 24px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 2px black;
+        border: 2px solid white;
+
+    }
+    #clear{
+        position: absolute;
+        bottom: 30px;
+        width: 30%;
+        height: 6vh;
+        font-size: 24px;
+        left: 5vw;
+        background-color: rgb(139, 0, 102);
+        color: white;
+        border: 2px solid white;
+        border-radius: 5px;
+        box-shadow: 2px 2px 2px black;
+    }
+    #equ{
+        position: absolute;
+        bottom: 30px;
+        width: 40%;
+        height: 6vh;
+        font-size: 24px;
+        left: 18vw;
+        background-color: rgb(139, 0, 102);
+        color: white;
+        border: 2px solid white;
+        border-radius: 5px;
+        box-shadow: 2px 2px 2px black;
+    }
+ </style>
+</head>
+<body>
+    <div id="container">
+    <form name="cform">
+        <input name="Ans" id="disply">
+        <br>
+        <input class="a"  onmousedown= clicksound() type="button" value="1" onclick="cform.Ans.value+='1'">
+        <input class="a"  onmousedown= clicksound() type="button" value="2" onclick="cform.Ans.value+='2'">
+        <input class="a"  onmousedown= clicksound() type="button" value="3" onclick="cform.Ans.value+='3'">
+        <input class="a"  onmousedown= clicksound() type="button" value="+" onclick="cform.Ans.value+='+'">
+        <br>
+        <input class="a" onmousedown= clicksound() type="button" value="4" onclick="cform.Ans.value+='4'">
+        <input class="a" onmousedown= clicksound() type="button" value="5" onclick="cform.Ans.value+='5'">
+        <input class="a" onmousedown= clicksound() type="button" value="6" onclick="cform.Ans.value+='6'">
+        <input class="a" onmousedown= clicksound() type="button" value="-" onclick="cform.Ans.value+='-'">
+        <br>
+        <input class="a" onmousedown= clicksound() type="button" value="7" onclick="cform.Ans.value+='7'">
+        <input class="a" onmousedown= clicksound() type="button" value="8" onclick="cform.Ans.value+='8'">
+        <input class="a" onmousedown= clicksound() type="button" value="9" onclick="cform.Ans.value+='9'">
+        <input class="a" onmousedown= clicksound() type="button" value="*" onclick="cform.Ans.value+='*'">
+        <br>
+        <input class="a" onmousedown= clicksound() type="button" value="%" onclick="cform.Ans.value+='%'">
+        <input class="a" onmousedown= clicksound() type="button" value="0" onclick="cform.Ans.value+='0'">
+        <input class="a" onmousedown= clicksound() type="button" value="." onclick="cform.Ans.value+='.'">
+        <input class="a" onmousedown= clicksound() type="button" value="/" onclick="cform.Ans.value+='/'">
+        <br>
+        <input id="clear" onmousedown= clicksound() type="button" value="=" onclick="cform.Ans.value=eval(cform.Ans.value)">
+        <input id="equ"  onmousedown= clicksound() type="button" value="C" onclick="cform.Ans.value=' '">
+    </form>
+</div>
+<script>
+    function clicksound()
+    {
+        var clksound=new Audio()
+        clksound.src="sound.wav"
+        clksound.play()
+    }
+</script>
+</body>
+</html>
